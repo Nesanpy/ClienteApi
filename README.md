@@ -13,12 +13,13 @@ API REST desarrollada en Visual Basic .NET (ASP.NET Core Web API) para administr
 
 # Estructura del proyecto
 
+```text
 ClienteApi/
 ├── Controllers/
 │   └── ClientesController.vb   # Endpoints REST (CRUD)
 ├── Services/
 │   ├── IClienteService.vb
-│   └── ClienteService.vb       # Lógica de negocio
+│   └── ClienteService.vb        # Lógica de negocio
 ├── Repositories/
 │   ├── IClienteRepository.vb
 │   └── ClienteRepository.vb    # Acceso a datos vía EF Core
@@ -31,6 +32,7 @@ ClienteApi/
 └── ClienteApi.vbproj
 
 EmpresaDB.sql                   # Script de creación de BD y tabla
+```
 
 
 # Modelo de datos
@@ -52,19 +54,13 @@ El script completo de creación se encuentra en EmpresaDB.sql
 
 Ruta base: api/clientes
 
-| Método | Ruta                 | Descripción                                                       | Body de ejemplo                 |
----------------------------------------------------------------------------------------------------------------------------------------
-| GET    | /api/clientes        | Devuelve la lista de todos los clientes                           | —                               |
-| GET    | /api/clientes/{id}   | Devuelve un cliente por su Id (404 si no existe)                  | —                               |
-| POST   | /api/clientes        | Registra un nuevo cliente (201 Created)                           | { "nombre": "Ana",
-                                                                                                        "apellido": "López",
-                                                                                                        "email":  "ana@correo.com",
-                                                                                                        "telefono": "0981000000" }    |
-| PUT    | /api/clientes/{id}   | Modifica un cliente existente (204 No Content, 404 si no existe)  | { "nombre": "Ana",
-                                                                                                        "apellido": "López García",
-                                                                                                        "email": "ana@correo.com",
-                                                                                                        "telefono": "0981000000" }    |
-| DELETE | /api/clientes/{id}   | Elimina un cliente (204 No Content, 404 si no existe)             | —                               |
+| Método | Ruta | Descripción | Body de ejemplo |
+| --- | --- | --- | --- |
+| `GET` | `/api/clientes` | Devuelve la lista de todos los clientes | — |
+| `GET` | `/api/clientes/{id}` | Devuelve un cliente por su Id (404 si no existe) | — |
+| `POST` | `/api/clientes` | Registra un nuevo cliente (201 Created) | `{ "nombre": "Ana", "apellido": "López", "email": "ana@correo.com", "telefono": "0981000000" }` |
+| `PUT` | `/api/clientes/{id}` | Modifica un cliente existente (204 No Content, 404 si no existe) | `{ "nombre": "Ana", "apellido": "López García", "email": "ana@correo.com", "telefono": "0981000000" }` |
+| `DELETE` | `/api/clientes/{id}` | Elimina un cliente (204 No Content, 404 si no existe) | — |
 
 # Instrucciones para ejecutar el proyecto
 
